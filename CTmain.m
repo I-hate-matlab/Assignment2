@@ -9,7 +9,7 @@
 clear all
 date
 %Initial conditions
-  N-init = [1, 0, 0, 0];
+  N_init = [1, 0, 0, 0];
 
 %Set value of time range in days
   t_min = 0;
@@ -19,7 +19,8 @@ date
 %Call ODE45
   [time, Num] = ode45(@CTFun, t_range, N_init);
 %Create plot for each stage
-plot(time,Num(:,1), '-',time,Num(:,2), '-o',time,Num(:3),'-..',time,Num(:,4), '--');
+plot(time,Num(:,1), '-',time,Num(:,2), '-o',time,Num(:,3), '-..',time,Num(:,4), '--');
 xlabel("Time (days)");
 ylabel('Number of cells in differentiation process');
 legend('Myeloid Stem Cell, Stage 1', "HFC-E Cell, Stage 2", "CFC-E Cell, Stage 3", "Erythrocyte, Stage 4");
+title("Cell ")
