@@ -5,10 +5,16 @@
 
 % Parameters to be used in Population functions
 
-function [Hunter, R] = parameters
+function [Hunter, R] = forcing_functions
 
     H0 = 5;
     R0 = 15;
     omega = 2;
 
-    Hunter = H0 (1)
+    %Given inital population values
+
+    %Given forcing functions
+    Hunter = H0 * (1 + sin(omega*t));
+    R = R0 * (1 + cos(omega*t));
+
+end
