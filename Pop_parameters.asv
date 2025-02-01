@@ -7,8 +7,13 @@
 
 function [Lam, C, Mu] = Pop_parameters
      %Constant values in each function
-    Lam = [0.005, 0.5, 0.15];
-    C = [0.0035, 0.005];
-    Mu = [0.002, 0.2];
+    Lam1 = 0.005;
+    Lam2 = 0.5;
+    Lam3 = 0.15;
+    Lam = 
+    C1 = 0.0035;
+    C2 = 0.005;
+    Mu1 = 0.002;
+    Mu2 = 0.2;
 
 end

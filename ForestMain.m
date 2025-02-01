@@ -23,8 +23,8 @@ Pop_init = [Lion, Deer, Grass];
   [time, Population] = ode45(@PopFun, t_range, Pop_init);
 
 %Create plot 
-plot(time,Popluation(:,1), '-',time,Popluation(:,2), '-o',time,Popluation(:,3), '-..');
+plot(time,Population(:,1), '-',time,Population(:,2), '-o',time,Population(:,3), '-..');
 xlabel("Time (years)");
-ylabel('Number of cells in differentiation process');
+ylabel('Population');
 legend('Lion', "Deer", "Grass");
-title("Forest Model Population")
+title("ODE45 Method");
