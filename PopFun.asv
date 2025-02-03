@@ -29,16 +29,10 @@ function  y = PopFun(t, population)
     y(2) = Lam(2)*population(2) + C(2)*population(2)*population(3) - Mu(2)*population(2) - C(2)*population(2)*population(1) - C(2)*population(2)*Hunter;
     y(3) = Lam(3)*population(3) + C(2)*population(3)*R - C(2)*population(2)*population(3);
 
-    
     %Conditional statement that transposes the 3x1 column vector into a 1x3
     %row vector
     %This was necessary because ODE45 expects a column vector to be
-    %returned, while the Euler method function expects a row vector.
-
-    %This statment will check if the index of the array being called is
-    %greater than 1 in a row format, and if so it means it must be being called by
-    %the euler method, and will transpose the array
-
+    %returned, whil
     if size(t, 2) > 1 || (size(t, 1) == 1 && size(population, 1) == 1)
         y = y';  % Convert to a row vector (1×3)
     end

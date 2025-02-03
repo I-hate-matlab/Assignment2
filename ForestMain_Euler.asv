@@ -1,6 +1,6 @@
 % Model & Sim of Biomed Sys 001
 % Assignment 2
-% 2/2/2025
+% 1/25/2025
 % Dillon Wright
 
 %Set initial value parameters to be used in functions 
@@ -39,12 +39,12 @@ function[independentv, solution] = euler_method (x0, xf, y0, h);
   
       done = 1 + abs(xf-x)/h;
 
-     % Preallocate solution matrix
+       % Preallocate solution matrix
     solution = zeros(done, length(y0));  % Make sure it can store all the values
     independentv = zeros(done, 1);
 
   % Main loop
-      for n = 1:done
+      for n = 1:done;
           y = y + h*PopFun(x,y);
           solution(n,:) = y;
           independentv(n,1) = x;
@@ -52,8 +52,10 @@ function[independentv, solution] = euler_method (x0, xf, y0, h);
       end
 end
 
-%Iterate through each initial condition for each population using
-%euler_method function
+%Create vector arrays to store values for each population type using Euler method
+
+
+%Iterate through each initial condition for each population, assign results to establish time and population vectors
   [time, Population] = euler_method (0, 10, Pop_init, 0.001);
 
 %Create plot 
@@ -61,4 +63,4 @@ plot(time,Population(:,1), '-',time,Population(:,2), '-o',time,Population(:,3), 
 xlabel("Time (years)");
 ylabel('Population');
 legend('Lion', "Deer", "Grass");
-title("Euler Method");
+title("ODE45 Method");

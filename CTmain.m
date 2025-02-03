@@ -4,7 +4,7 @@
 % Dillon Wright
 
 %CTmain
-%Program to find cell poplualtion during 4-stage process
+%Program to find cell population during 4-stage process
 
 clear all
 date
@@ -23,4 +23,4 @@ plot(time,Num(:,1), '-',time,Num(:,2), '-o',time,Num(:,3), '-..',time,Num(:,4), 
 xlabel("Time (days)");
 ylabel('Number of cells in differentiation process');
 legend('Myeloid Stem Cell, Stage 1', "HFC-E Cell, Stage 2", "CFC-E Cell, Stage 3", "Erythrocyte, Stage 4");
-title("Cell ")
+title("Cell and Tissue Engineering Example")
